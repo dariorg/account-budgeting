@@ -6,7 +6,11 @@
         <field name="priority" eval="100" />
         <field name="arch" type="xml">
             <xpath expr="//block[@id='analytic']" position="inside">
-                <setting id="account_budget" string="Budgets" help="Manage account budgeting">
+                <setting
+                    id="account_budget"
+                    string="Budgets"
+                    help="Manage account budgeting"
+                >
                     <div class="content-group">
                         <div class="mt16">
                             <button

@@ -59,20 +59,14 @@ class CrossoveredBudget(models.Model):
     _description = "Budget"
     _inherit = ["mail.thread"]
 
-    name = fields.Char(
-        string="Budget Name", required=True
-    )
+    name = fields.Char(string="Budget Name", required=True)
     creating_user_id = fields.Many2one(
         comodel_name="res.users",
         string="Responsible",
         default=lambda self: self.env.user,
     )
-    date_from = fields.Date(
-        string="Start Date", required=True
-    )
-    date_to = fields.Date(
-        string="End Date", required=True
-    )
+    date_from = fields.Date(string="Start Date", required=True)
+    date_to = fields.Date(string="End Date", required=True)
     state = fields.Selection(
         selection=[
             ("draft", "Draft"),
