@@ -3,3 +3,4 @@
 * Oihane Crucelaegui <oihanecrucelaegi@avanzosc.es>
 * Alberto Martín Cortada <alberto.martin@guadaltech.es>
 * Freni Patel <fpatel@opensourceintegrators.com>
+* Darío Rodríguez <drodriguez@liderit.es>

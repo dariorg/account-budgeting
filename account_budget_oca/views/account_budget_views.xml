@@ -84,34 +84,34 @@
                     <button
                         string="Confirm"
                         name="action_budget_confirm"
-                        states="draft"
+                        invisible="state != 'draft'"
                         type="object"
                         class="oe_highlight"
                     />
                     <button
                         string="Approve"
                         name="action_budget_validate"
-                        states="confirm"
+                        invisible="state != 'confirm'"
                         type="object"
                         class="oe_highlight"
                     />
                     <button
                         string="Done"
                         name="action_budget_done"
-                        states="validate"
+                        invisible="state != 'validate'"
                         type="object"
                         class="oe_highlight"
                     />
                     <button
                         string="Reset to Draft"
                         name="action_budget_draft"
-                        states="cancel"
+                        invisible="state != 'cancel'"
                         type="object"
                     />
                     <button
                         string="Cancel Budget"
                         name="action_budget_cancel"
-                        states="confirm,validate"
+                        invisible="state not in ['confirm', 'validate']"
                         type="object"
                     />
                     <field
@@ -126,7 +126,7 @@
                         <h1>
                             <field
                                 name="name"
-                                attrs="{'readonly':[('state','!=','draft')]}"
+                                readonly="state != 'draft'"
                                 placeholder="Budget Name"
                             />
                         </h1>
@@ -135,7 +135,7 @@
                         <group>
                             <field
                                 name="creating_user_id"
-                                attrs="{'readonly':[('state','!=','draft')]}"
+                                readonly="state != 'draft'"
                             />
                         </group>
                         <group>
@@ -144,12 +144,12 @@
                                     <field
                                     name="date_from"
                                     class="oe_inline"
-                                    attrs="{'readonly':[('state','!=','draft')]}"
+                                    readonly="state != 'draft'"
                                 /> -
                                     <field
                                     name="date_to"
                                     class="oe_inline"
-                                    attrs="{'readonly':[('state','!=','draft')]}"
+                                    readonly="state != 'draft'"
                                     nolabel="1"
                                 />
                                 </div>
@@ -167,7 +167,7 @@
                                 context="{'default_date_from': date_from,'default_date_to': date_to}"
                                 colspan="4"
                                 nolabel="1"
-                                attrs="{'readonly':[('state','!=','draft')]}"
+                                readonly="state != 'draft'"
                             >
                                 <tree>
                                     <field name="general_budget_id" />
